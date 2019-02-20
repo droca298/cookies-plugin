@@ -12,7 +12,7 @@
 $texto = "En nuestra página poseemos una galleta muy ricas, pero para poder comerlas primero debes de ACEPTAR.";
 
 
-function inicializar()
+function ini_infoCookies()
 {
     global $texto; //RECORDAD que con global hacemos uso de variables declaradas fuera del ámbito de la función
     if (get_option('texto')) {
@@ -20,11 +20,11 @@ function inicializar()
     }
 }
 
-add_action("admin_init", "inicializar");
+add_action("admin_init", "ini_infoCookies");
 
 
 
-function add_conf_menu(){
+function add_config_menu(){
 
     add_menu_page(
         'Modificar valores de InfoCookies', //Título de la página
@@ -35,7 +35,7 @@ function add_conf_menu(){
         'dashicons-admin-tools'); //Icono
 }
 
-add_action("admin_menu", "add_conf_menu");
+add_action("admin_menu", "add_config_menu");
 
 function form_menu_infoCookies(){
 
@@ -66,11 +66,11 @@ function form_menu_infoCookies(){
 
 }
 
-function anadir_soporte_settings(){
+function add_soporte_settings(){
 
     register_setting('text','texto');
 }
 
-add_action("admin_init", "anadir_soporte_settings");
+add_action("admin_init", "add_soporte_settings");
 
 include 'showModal.php';

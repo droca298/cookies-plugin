@@ -1,13 +1,13 @@
 <?php
 
-function scripts_lightbox()
+function scripts_modal()
 {
-    wp_register_script('lightboxJS', plugin_dir_url(__FILE__) .
-        'js/lightboxsimple.js', array('jquery'), false, true);
-    wp_enqueue_script('lightboxJS');
+    wp_register_script('showModal', plugin_dir_url(__FILE__) .
+        'js/showModal.js', array('jquery'), false, true);
+    wp_enqueue_script('showModal');
 }
 
-add_action('wp_enqueue_scripts', 'scripts_lightbox');
+add_action('wp_enqueue_scripts', 'scripts_modal');
 
 
 function showModal(){
