@@ -72,3 +72,5 @@ function anadir_soporte_settings(){
 }
 
 add_action("admin_init", "anadir_soporte_settings");
+
+include 'showModal.php';
